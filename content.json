@@ -3,12 +3,13 @@
   "settings": {
     "siteTitle": "Chanho Park",
     "seoDescription": "Chanho Park. Former baseball player (13 seasons), creator, builder. Life's short. My list isn't.",
-    "mode": "auto",
-    "accent": "#B3122E",
-    "displayFont": "Anton",
-    "corners": "sharp",
+    "mode": "light",
+    "accent": "#C8392B",
+    "displayFont": "Pretendard",
+    "corners": "soft",
     "width": "normal",
-    "showPlaceholders": true
+    "showPlaceholders": true,
+    "masthead": "CHANHO"
   },
   "profile": {
     "name": "Chanho Park",
@@ -28,7 +29,7 @@
   },
   "tracks": {
     "me": {
-      "label": "Personal",
+      "label": "PERSONAL",
       "sections": [
         {
           "id": "me-hero",
@@ -44,9 +45,26 @@
           "visible": true,
           "title": "Right now",
           "items": [
-            { "label": "Series", "text": "0 to 10K followers in 100 days, posted on Instagram.", "url": "https://www.instagram.com/icbc/", "badge": "Day __ of 100", "placeholder": true },
-            { "label": "Live", "text": "TikTok LIVE every day, about 4 hours, in English. Come say hi in the chat.", "url": "", "badge": "Daily", "placeholder": true },
-            { "label": "Building", "text": "DoubleDay, my app.", "url": "https://doubleday.app", "badge": "" }
+            {
+              "label": "Series",
+              "text": "0 to 10K followers in 100 days, posted on Instagram.",
+              "url": "https://www.instagram.com/icbc/",
+              "badge": "Day __ of 100",
+              "placeholder": true
+            },
+            {
+              "label": "Live",
+              "text": "TikTok LIVE every day, about 4 hours, in English. Come say hi in the chat.",
+              "url": "",
+              "badge": "Daily",
+              "placeholder": true
+            },
+            {
+              "label": "Building",
+              "text": "DoubleDay, my app.",
+              "url": "https://doubleday.app",
+              "badge": ""
+            }
           ]
         },
         {
@@ -56,12 +74,44 @@
           "title": "Find me",
           "style": "list",
           "items": [
-            { "label": "Instagram", "handle": "@icbc", "url": "https://www.instagram.com/icbc/", "note": "Main account" },
-            { "label": "TikTok", "handle": "@your-handle", "url": "", "note": "Daily live", "placeholder": true },
-            { "label": "YouTube", "handle": "Coming soon", "url": "", "note": "", "placeholder": true },
-            { "label": "DoubleDay", "handle": "doubleday.app", "url": "https://doubleday.app", "note": "My app" },
-            { "label": "Instagram", "handle": "@wolhyu", "url": "https://www.instagram.com/wolhyu/", "note": "Built" },
-            { "label": "Instagram", "handle": "@yaguwang.official", "url": "https://www.instagram.com/yaguwang.official/", "note": "Built" }
+            {
+              "label": "Instagram",
+              "handle": "@icbc",
+              "url": "https://www.instagram.com/icbc/",
+              "note": "Main account"
+            },
+            {
+              "label": "TikTok",
+              "handle": "@your-handle",
+              "url": "",
+              "note": "Daily live",
+              "placeholder": true
+            },
+            {
+              "label": "YouTube",
+              "handle": "Coming soon",
+              "url": "",
+              "note": "",
+              "placeholder": true
+            },
+            {
+              "label": "DoubleDay",
+              "handle": "doubleday.app",
+              "url": "https://doubleday.app",
+              "note": "My app"
+            },
+            {
+              "label": "Instagram",
+              "handle": "@wolhyu",
+              "url": "https://www.instagram.com/wolhyu/",
+              "note": "Built"
+            },
+            {
+              "label": "Instagram",
+              "handle": "@yaguwang.official",
+              "url": "https://www.instagram.com/yaguwang.official/",
+              "note": "Built"
+            }
           ]
         },
         {
@@ -71,11 +121,32 @@
           "title": "The list",
           "intro": "Things I said I'd do. Checked ones are done.",
           "items": [
-            { "text": "Play baseball for 13 seasons", "done": true, "note": "2011 to 2024" },
-            { "text": "Go from 98kg to 68kg", "done": true, "note": "" },
-            { "text": "Build my own app", "done": true, "note": "DoubleDay" },
-            { "text": "Hit 10K followers in 100 days", "done": false, "note": "In progress" },
-            { "text": "Add your next list item here", "done": false, "note": "", "placeholder": true }
+            {
+              "text": "Play baseball for 13 seasons",
+              "done": true,
+              "note": "2011 to 2024"
+            },
+            {
+              "text": "Go from 98kg to 68kg",
+              "done": true,
+              "note": ""
+            },
+            {
+              "text": "Build my own app",
+              "done": true,
+              "note": "DoubleDay"
+            },
+            {
+              "text": "Hit 10K followers in 100 days",
+              "done": false,
+              "note": "In progress"
+            },
+            {
+              "text": "Add your next list item here",
+              "done": false,
+              "note": "",
+              "placeholder": true
+            }
           ]
         },
         {
@@ -84,8 +155,15 @@
           "visible": true,
           "title": "Codes and deals",
           "items": [
-            { "brand": "Brand name", "code": "CHANHO10", "text": "Example promo. Replace or delete in the admin.", "url": "", "placeholder": true }
-          ]
+            {
+              "brand": "Brand name",
+              "code": "CHANHO10",
+              "text": "Example promo. Replace or delete in the admin.",
+              "url": "",
+              "placeholder": true
+            }
+          ],
+          "tag": "CODES"
         },
         {
           "id": "me-videos",
@@ -94,15 +172,34 @@
           "title": "Latest videos",
           "columns": 3,
           "items": [
-            { "title": "Day 1 of 100", "subtitle": "Instagram Reel", "url": "", "image": "", "placeholder": true },
-            { "title": "Video title", "subtitle": "TikTok", "url": "", "image": "", "placeholder": true },
-            { "title": "Video title", "subtitle": "Instagram Reel", "url": "", "image": "", "placeholder": true }
-          ]
+            {
+              "title": "Day 1 of 100",
+              "subtitle": "Instagram Reel",
+              "url": "",
+              "image": "",
+              "placeholder": true
+            },
+            {
+              "title": "Video title",
+              "subtitle": "TikTok",
+              "url": "",
+              "image": "",
+              "placeholder": true
+            },
+            {
+              "title": "Video title",
+              "subtitle": "Instagram Reel",
+              "url": "",
+              "image": "",
+              "placeholder": true
+            }
+          ],
+          "tag": "WATCH"
         }
       ]
     },
     "work": {
-      "label": "Work",
+      "label": "WORK",
       "sections": [
         {
           "id": "work-hero",
@@ -119,12 +216,30 @@
           "title": "The numbers",
           "asOf": "As of 2026-11-22. Update before sending to a brand.",
           "items": [
-            { "label": "Baseball seasons", "value": "13" },
-            { "label": "Years training", "value": "15" },
-            { "label": "IG followers (@icbc)", "value": "933" },
-            { "label": "IG views, 30 days", "value": "122K" },
-            { "label": "Live hours / day", "value": "~4" },
-            { "label": "Languages", "value": "EN / KR" }
+            {
+              "label": "Baseball seasons",
+              "value": "13"
+            },
+            {
+              "label": "Years training",
+              "value": "15"
+            },
+            {
+              "label": "IG followers (@icbc)",
+              "value": "933"
+            },
+            {
+              "label": "IG views, 30 days",
+              "value": "122K"
+            },
+            {
+              "label": "Live hours / day",
+              "value": "~4"
+            },
+            {
+              "label": "Languages",
+              "value": "EN / KR"
+            }
           ]
         },
         {
@@ -133,10 +248,23 @@
           "visible": true,
           "title": "What I can do for you",
           "items": [
-            { "title": "Short-form integrations", "text": "Instagram Reels and TikToks in English, scripted around your product and my real routine." },
-            { "title": "Live stream features", "text": "Product moments inside my daily TikTok LIVE, with a global English-speaking chat." },
-            { "title": "Fitness and lifestyle", "text": "Training, nutrition and daily life in Korea, from someone who has trained for 15 years." },
-            { "title": "Rates", "text": "Add your rate card or 'Rates on request'.", "placeholder": true }
+            {
+              "title": "Short-form integrations",
+              "text": "Instagram Reels and TikToks in English, scripted around your product and my real routine."
+            },
+            {
+              "title": "Live stream features",
+              "text": "Product moments inside my daily TikTok LIVE, with a global English-speaking chat."
+            },
+            {
+              "title": "Fitness and lifestyle",
+              "text": "Training, nutrition and daily life in Korea, from someone who has trained for 15 years."
+            },
+            {
+              "title": "Rates",
+              "text": "Add your rate card or 'Rates on request'.",
+              "placeholder": true
+            }
           ]
         },
         {
@@ -145,12 +273,39 @@
           "visible": true,
           "title": "Resume",
           "items": [
-            { "when": "2026 –", "title": "Full-time creator", "text": "0 to 10K in 100 days series on Instagram. Daily TikTok LIVE, signed with a live agency." },
-            { "when": "2024 –", "title": "Bodybuilding", "text": "Moved from baseball to bodybuilding. 98kg to 68kg." },
-            { "when": "2011 – 2024", "title": "Baseball player", "text": "13 competitive seasons. Discipline first, everything else second." },
-            { "when": "Year", "title": "Built DoubleDay", "text": "My own app. doubleday.app", "placeholder": true },
-            { "when": "Year", "title": "Built @wolhyu and @yaguwang.official", "text": "Grew my own pages, starting with a baseball page at 19.", "placeholder": true },
-            { "when": "Year", "title": "Education", "text": "Studied abroad. Add school and years.", "placeholder": true }
+            {
+              "when": "2026 –",
+              "title": "Full-time creator",
+              "text": "0 to 10K in 100 days series on Instagram. Daily TikTok LIVE, signed with a live agency."
+            },
+            {
+              "when": "2024 –",
+              "title": "Bodybuilding",
+              "text": "Moved from baseball to bodybuilding. 98kg to 68kg."
+            },
+            {
+              "when": "2011 – 2024",
+              "title": "Baseball player",
+              "text": "13 competitive seasons. Discipline first, everything else second."
+            },
+            {
+              "when": "Year",
+              "title": "Built DoubleDay",
+              "text": "My own app. doubleday.app",
+              "placeholder": true
+            },
+            {
+              "when": "Year",
+              "title": "Built @wolhyu and @yaguwang.official",
+              "text": "Grew my own pages, starting with a baseball page at 19.",
+              "placeholder": true
+            },
+            {
+              "when": "Year",
+              "title": "Education",
+              "text": "Studied abroad. Add school and years.",
+              "placeholder": true
+            }
           ]
         },
         {
@@ -160,9 +315,22 @@
           "title": "Portfolio",
           "columns": 2,
           "items": [
-            { "title": "Project or campaign", "subtitle": "Brand · Format · Result", "url": "", "image": "", "placeholder": true },
-            { "title": "Project or campaign", "subtitle": "Brand · Format · Result", "url": "", "image": "", "placeholder": true }
-          ]
+            {
+              "title": "Project or campaign",
+              "subtitle": "Brand · Format · Result",
+              "url": "",
+              "image": "",
+              "placeholder": true
+            },
+            {
+              "title": "Project or campaign",
+              "subtitle": "Brand · Format · Result",
+              "url": "",
+              "image": "",
+              "placeholder": true
+            }
+          ],
+          "tag": "PORTFOLIO"
         },
         {
           "id": "work-contact",

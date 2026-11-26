@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Dugout</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
 /* Layout concept: editor rail on the left, live phone/desktop preview on the right. */
 :root {
   --bg: #EEEFF1; --panel: #FFFFFF; --ink: #111418; --muted: #5E6571; --line: #D9DCE1;
-  --soft: #F5F6F7; --accent: #B3122E; --ok: #1E7A45; --warn: #9A6200;
-  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --soft: #F5F6F7; --accent: #C8392B; --ok: #1E7A45; --warn: #9A6200;
+  --body: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   color-scheme: light;
 }
@@ -257,7 +258,7 @@ button { cursor: pointer; }
         '<button class="icon" data-act="vis" title="' + (s.visible === false ? "보이기" : "숨기기") + '" aria-label="보이기/숨기기">' + (s.visible === false ? "◌" : "●") + "</button>" +
         '<button class="icon danger" data-act="del" title="섹션 삭제" aria-label="섹션 삭제">×</button></div>';
       if (isOpen) {
-        h += '<div class="sec-b">' + T.fields.map(function (f) { return fieldHTML(base.concat(f[0]), f, s[f[0]]); }).join("");
+        h += '<div class="sec-b">' + (s.type !== "hero" ? fieldHTML(base.concat("tag"), ["tag", "영문 작은 라벨 (제목 옆 세리프 글씨, 비우면 기본값)"], s.tag) : "") + T.fields.map(function (f) { return fieldHTML(base.concat(f[0]), f, s[f[0]]); }).join("");
         if (s.type === "contact") h += fieldHTML(base.concat("placeholder"), ["placeholder", "아직 임시 내용 (PLACEHOLDER 표시)", "check"], s.placeholder);
         if (T.item) {
           h += '<div class="items">';
@@ -325,10 +326,11 @@ button { cursor: pointer; }
   }
   function renderLook() {
     var s = c.settings, p = c.profile;
-    var sw = ["#B3122E", "#0F1216", "#1F4FD8", "#1E7A45", "#C2410C", "#6D28D9"];
+    var sw = ["#C8392B", "#111111", "#1F4FD8", "#1E7A45", "#C2410C", "#6D28D9"];
     pane.innerHTML =
       '<div class="card"><h3>프로필</h3>' +
       fieldHTML(["profile", "name"], ["name", "이름"], p.name) +
+      fieldHTML(["settings", "masthead"], ["masthead", "맨 위 로고 글자"], s.masthead) +
       fieldHTML(["profile", "location"], ["location", "지역"], p.location) +
       fieldHTML(["profile", "catchphrase"], ["catchphrase", "캐치프레이즈"], p.catchphrase) +
       fieldHTML(["profile", "avatar"], ["avatar", "프로필 사진 (비워두면 안 보임)", "image"], p.avatar) + "</div>" +
@@ -336,8 +338,8 @@ button { cursor: pointer; }
       fieldHTML(["settings", "mode"], ["mode", "밝기", "select", [["auto", "방문자 기기 따라가기"], ["light", "항상 밝게"], ["dark", "항상 어둡게"]]], s.mode) +
       '<label class="field"><span>포인트 색</span><input type="text" data-path="settings.accent" value="' + esc(s.accent) + '"></label><div class="swatches">' +
       sw.map(function (x) { return '<button type="button" data-accent="' + x + '" style="background:' + x + '" aria-label="' + x + '"></button>'; }).join("") + "</div>" +
-      fieldHTML(["settings", "displayFont"], ["displayFont", "제목 글꼴", "select", [["Anton", "Anton (썸네일과 같은 글꼴)"], ["Bebas Neue", "Bebas Neue"], ["Oswald", "Oswald"], ["Archivo Black", "Archivo Black"]]], s.displayFont) +
-      fieldHTML(["settings", "corners"], ["corners", "모서리", "select", [["sharp", "각지게"], ["soft", "둥글게"]]], s.corners) +
+      fieldHTML(["settings", "displayFont"], ["displayFont", "제목 글꼴", "select", [["Pretendard", "Pretendard (예전 블로그와 같은 글꼴)"], ["Cormorant Garamond", "Cormorant (세리프)"], ["Anton", "Anton (썸네일 글꼴)"], ["Bebas Neue", "Bebas Neue"]]], s.displayFont) +
+      fieldHTML(["settings", "corners"], ["corners", "모서리", "select", [["soft", "둥글게"], ["sharp", "각지게"]]], s.corners) +
       fieldHTML(["settings", "width"], ["width", "페이지 폭", "select", [["normal", "보통"], ["wide", "넓게"]]], s.width) +
       fieldHTML(["settings", "showPlaceholders"], ["showPlaceholders", "임시(PLACEHOLDER) 항목을 사이트에 보여주기. 공개 전에 끄세요.", "check"], s.showPlaceholders) + "</div>" +
       '<div class="card"><h3>검색/공유 정보</h3>' +
