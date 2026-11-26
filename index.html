@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chanho Park</title>
+<meta name="description" content="Chanho Park. Former baseball player (13 seasons), creator, builder. Life's short. My list isn't.">
+<meta property="og:title" content="Chanho Park">
+<meta property="og:description" content="Life's short. My list isn't.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div id="app"><noscript>Chanho Park. Please enable JavaScript.</noscript></div>
+<script src="assets/render.js"></script>
+<script>
+  fetch("content.json?v=" + Date.now(), { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (c) { ChanhoSite.mount(document.getElementById("app"), c); })
+    .catch(function () { document.getElementById("app").textContent = "Could not load the page. Refresh to try again."; });
+</script>
+</body>
+</html>

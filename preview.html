@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Preview</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div id="app"></div>
+<script src="assets/render.js"></script>
+<script>
+  /* Draft preview used by the admin. Shows the admin's unsaved draft, live. */
+  var app = document.getElementById("app");
+  var mounted = false;
+  function show(c) { if (!c) return; if (!mounted) { ChanhoSite.mount(app, c); mounted = true; } else { ChanhoSite.update(app, c); } }
+  window.addEventListener("message", function (e) {
+    if (e.origin !== location.origin) return;
+    if (e.data && e.data.type === "cp-content") show(e.data.content);
+    if (e.data && e.data.type === "cp-route") { location.hash = e.data.hash; }
+  });
+  var draft = null;
+  try { draft = JSON.parse(localStorage.getItem("cp-draft") || "null"); } catch (e) {}
+  if (draft) show(draft);
+  else fetch("content.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(show);
+  try { parent.postMessage({ type: "cp-preview-ready" }, location.origin); } catch (e) {}
+</script>
+</body>
+</html>
