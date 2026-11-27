@@ -150,6 +150,8 @@ button { cursor: pointer; }
     services: { name: "제공 서비스", fields: [["title", "섹션 제목"]], item: [["title", "서비스"], ["text", "설명", "area"]], blank: { title: "", text: "" } },
     timeline: { name: "이력(타임라인)", fields: [["title", "섹션 제목"]], item: [["when", "기간"], ["title", "제목"], ["text", "설명", "area"]], blank: { when: "", title: "", text: "" } },
     text:     { name: "자유 글", fields: [["title", "섹션 제목"], ["body", "본문", "area"]] },
+    offers:   { name: "판매 상품", fields: [["title", "섹션 제목"], ["intro", "소개 문장", "area"]], item: [["title", "상품 이름"], ["badge", "작은 라벨 (예: NEW)"], ["price", "가격 (예: $15)"], ["text", "설명", "area"], ["url", "결제/구매 링크 (비우면 Coming soon)"], ["button", "버튼 글자"]], blank: { title: "", badge: "", price: "", text: "", url: "", button: "Get it" } },
+    signup:   { name: "무료 자료 + 이메일 받기", fields: [["title", "섹션 제목"], ["text", "설명", "area"], ["action", "이메일 폼 주소 (뉴스레터 툴의 form action URL)"], ["inputName", "이메일 칸 이름 (툴마다 다름, 기본 email)"], ["inputHint", "이메일 칸 안내 글자"], ["url", "폼 주소가 없을 때 버튼 링크"], ["button", "버튼 글자"], ["note", "아래 작은 글씨", "area"]] },
     contact:  { name: "연락하기", fields: [["title", "섹션 제목"], ["text", "설명", "area"], ["email", "이메일"], ["cvUrl", "CV/이력서 PDF 링크", "image"], ["cvLabel", "CV 버튼 글자"]] }
   };
 
@@ -259,7 +261,7 @@ button { cursor: pointer; }
         '<button class="icon danger" data-act="del" title="섹션 삭제" aria-label="섹션 삭제">×</button></div>';
       if (isOpen) {
         h += '<div class="sec-b">' + (s.type !== "hero" ? fieldHTML(base.concat("tag"), ["tag", "영문 작은 라벨 (제목 옆 세리프 글씨, 비우면 기본값)"], s.tag) : "") + T.fields.map(function (f) { return fieldHTML(base.concat(f[0]), f, s[f[0]]); }).join("");
-        if (s.type === "contact") h += fieldHTML(base.concat("placeholder"), ["placeholder", "아직 임시 내용 (PLACEHOLDER 표시)", "check"], s.placeholder);
+        if (s.type === "contact" || s.type === "signup") h += fieldHTML(base.concat("placeholder"), ["placeholder", "아직 임시 내용 (PLACEHOLDER 표시)", "check"], s.placeholder);
         if (T.item) {
           h += '<div class="items">';
           (s.items || []).forEach(function (it, j) {

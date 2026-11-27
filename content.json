@@ -68,6 +68,67 @@
           ]
         },
         {
+          "id": "me-free",
+          "type": "signup",
+          "visible": true,
+          "placeholder": true,
+          "tag": "FREE",
+          "title": "My 14-day reset plan",
+          "text": "The exact two weeks I ate to reset, day by day. Free. Drop your email and I'll send it.",
+          "action": "",
+          "inputName": "email",
+          "inputHint": "Your email",
+          "url": "",
+          "button": "Send me the plan",
+          "note": "I'm not a doctor. This is what I did, not medical advice."
+        },
+        {
+          "id": "me-shop",
+          "type": "offers",
+          "visible": true,
+          "title": "Get something from me",
+          "tag": "SHOP",
+          "intro": "",
+          "items": [
+            {
+              "title": "A personal video from me",
+              "badge": "Birthday · Congrats",
+              "price": "$15",
+              "text": "A short video for you or a friend. Birthday, congrats, a pep talk. Tell me the name and the moment.",
+              "url": "",
+              "button": "Request a video",
+              "placeholder": true
+            },
+            {
+              "title": "Lazy Fitness",
+              "badge": "Program",
+              "price": "",
+              "text": "How I build and keep a good body with the least time and effort. Simple, efficient, no extreme diet.",
+              "url": "",
+              "button": "Start the program",
+              "placeholder": true
+            },
+            {
+              "title": "Mantra",
+              "badge": "",
+              "price": "",
+              "text": "Add what the mantra product is and who it's for.",
+              "url": "",
+              "button": "Get it",
+              "placeholder": true
+            },
+            {
+              "title": "1:1 call with me",
+              "badge": "30 min",
+              "price": "$49",
+              "text": "30 minutes, just you and me. Training, dating, moving abroad, building from zero. Bring your questions.",
+              "url": "",
+              "button": "Book a call",
+              "placeholder": true
+            }
+          ]
+        },
+        {
           "id": "me-links",
           "type": "links",
           "visible": true,
