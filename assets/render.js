@@ -12,7 +12,7 @@
     "Anton": ['"Anton", Impact, sans-serif', "uppercase", "0.005em", "400"],
     "Bebas Neue": ['"Bebas Neue", Impact, sans-serif', "uppercase", "0.02em", "400"]
   };
-  var TAGS = { now: "NOW", links: "SOCIAL", list: "THE LIST", promos: "CODES", gallery: "WATCH", stats: "NUMBERS", services: "SERVICES", timeline: "RESUME", text: "NOTE", contact: "CONTACT" };
+  var TAGS = { now: "NOW", links: "SOCIAL", list: "THE LIST", promos: "CODES", gallery: "WATCH", stats: "NUMBERS", services: "SERVICES", timeline: "RESUME", text: "NOTE", contact: "CONTACT", offers: "SHOP", signup: "FREE" };
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -121,6 +121,30 @@
     },
     text: function (s) {
       return open(s) + head(s) + '<div class="prose rv' + ph(s) + '">' + esc(s.body) + "</div>" + close;
+    },
+    offers: function (s) {
+      return open(s) + head(s) + (s.intro ? '<p class="intro rv">' + esc(s.intro) + "</p>" : "") + '<div class="offers rv">' + (s.items || []).map(function (it, i) {
+        var u = safeUrl(it.url);
+        var btn = u ? '<a class="btn fill" href="' + esc(u) + '"' + (/^https?:/i.test(u) ? ' target="_blank" rel="noopener"' : "") + ">" + esc(it.button || "Get it") + " →</a>"
+          : '<span class="btn soon">' + esc(it.soon || "Coming soon") + "</span>";
+        return '<div class="offer' + ph(it) + '"><div class="top"><span class="no">' + pad(i + 1) + "</span>" + (it.badge ? '<span class="badge">' + esc(it.badge) + "</span>" : "") + "</div>" +
+          "<h3>" + esc(it.title) + "</h3>" + (it.price ? '<div class="price">' + esc(it.price) + "</div>" : "") + "<p>" + esc(it.text) + "</p>" + '<div class="cta">' + btn + "</div></div>";
+      }).join("") + "</div>" + close;
+    },
+    signup: function (s) {
+      var act = safeUrl(s.action), u = safeUrl(s.url), body;
+      if (act && /^https:/i.test(act)) {
+        body = '<form class="signup-form" method="post" action="' + esc(act) + '" target="_blank">' +
+          '<input type="email" name="' + esc(s.inputName || "email") + '" required placeholder="' + esc(s.inputHint || "Your email") + '" aria-label="Email">' +
+          '<button class="btn fill" type="submit">' + esc(s.button || "Send it to me") + "</button></form>";
+      } else if (u) {
+        body = '<div class="actions"><a class="btn fill" href="' + esc(u) + '"' + (/^https?:/i.test(u) ? ' target="_blank" rel="noopener"' : "") + ">" + esc(s.button || "Get it free") + " →</a></div>";
+      } else {
+        body = '<div class="actions"><span class="btn soon">' + esc(s.button || "Get it free") + "</span></div>";
+      }
+      return open(s) + '<div class="contact signup rv' + ph(s) + '"><p class="eyebrow">' + esc(s.tag || TAGS.signup) + "</p>" +
+        (s.title ? "<h2>" + esc(s.title) + "</h2>" : "") + (s.text ? "<p>" + esc(s.text) + "</p>" : "") + body +
+        (s.note ? '<p class="fine">' + esc(s.note) + "</p>" : "") + "</div>" + close;
     },
     contact: function (s) {
       var cv = safeUrl(s.cvUrl);
